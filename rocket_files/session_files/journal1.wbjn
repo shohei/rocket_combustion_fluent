@@ -1,0 +1,13 @@
+# encoding: utf-8
+# 2024 R2
+SetScriptVersion(Version="24.2.133")
+Save(Overwrite=True)
+template1 = GetTemplate(TemplateName="Fluid Flow")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.SetFile(FilePath="C:/Users/shohei/Downloads/rocket_combustion_fluent/nozzle.x_t")
+geometry1.Edit(IsSpaceClaimGeometry=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+geometry1.Exit()
+Open(FilePath="C:/Users/shohei/Downloads/rocket_combustion_fluent/rocket.wbpj")
